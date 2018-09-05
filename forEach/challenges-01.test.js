@@ -209,7 +209,26 @@ const createList = (availableItems) => {
 // ------------------------------------------------------------------------------------------------
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let outputArray = [];
+  arr.forEach((num) => {
+    let fizzBuzzResult = '';
+    if(num % 3 === 0){
+      fizzBuzzResult += 'Fizz';
+    }
+    if(num % 5 === 0){
+      if(fizzBuzzResult === ''){
+        fizzBuzzResult += 'Buzz';
+      }
+      else{
+        fizzBuzzResult += ' Buzz';
+      }
+    }
+    if(fizzBuzzResult === ''){
+      outputArray.push(num);
+    }
+    else(outputArray.push(fizzBuzzResult));
+  })
+  return outputArray;
 }
 
 // ------------------------------------------------------------------------------------------------
