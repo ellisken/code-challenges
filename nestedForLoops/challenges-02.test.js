@@ -53,10 +53,9 @@ const grandTotal = (hours, stores) => {
 
 const salesData = (data) => {
   const cookiesPerHourVSTime = [];
-  const hourlySales = grandTotal(hoursOpen, cookieStores);
   for(let i=0; i < hoursOpen.length; i++){
     let storeSalesVSHour = {};
-    storeSalesVSHour.sales = `${hourlySales[i]} cookies`;
+    storeSalesVSHour.sales = `${data[i]} cookies`;
     storeSalesVSHour.time = hoursOpen[i];
     cookiesPerHourVSTime.push(storeSalesVSHour);
   }
