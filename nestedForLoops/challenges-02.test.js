@@ -76,7 +76,17 @@ const salesData = (data) => {
 // ------------------------------------------------------------------------------------------------
 
 const giveValentines = (list) => {
-  // Solution code here...
+  const valentineMessages = [];
+  list.forEach( (person) => {
+    let listWithoutPerson = list.slice();
+    let personIndex = list.indexOf(person);
+    listWithoutPerson.splice(personIndex, 1);
+    listWithoutPerson.forEach( (name) => {
+      valentineMessages.push(`${person} gives a Valentine to ${name}.`);
+    })
+    }
+  )
+  return valentineMessages;
 };
 
 // ------------------------------------------------------------------------------------------------
