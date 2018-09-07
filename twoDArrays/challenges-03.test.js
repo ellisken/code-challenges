@@ -203,9 +203,37 @@ const excel = (str) => {
 //   ['X', 'O', 'X'],
 // ];
 // ------------------------------------------------------------------------------------------------
+let helpCheck = (board, row1, col1, row2, col2, row3, col3) => {
+  let square1 = board[row1][col1];
+  let square2 = board[row2][col2];
+  let square3 = board[row3][col3];
+  console.log(square1+square2+square3);
+  if(square1+square2+square3 === 'XXX' || square1+square2+square3 === 'OOO'){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
 
 const detectTicTacToeWin = (board) => {
-  // Solution code here...
+  //Check rows
+  for(let i=0; i < board.length; i++){
+    if(helpCheck(board, i, 0, i, 1, i, 2)){
+      return true;
+    }
+  }
+  //Check columns
+  for(let i=0; i < board.length; i++){
+    if(helpCheck(board, 0, i, 1, i, 2, i)){
+      return true;
+    }
+  }
+  //Check diagonals  
+  if(helpCheck(board, 0, 0, 1, 1, 2, 2) || helpCheck(board, 2, 0, 1, 1, 0, 2)){
+    return true;
+  }
+  return false;
 };
 
 // ------------------------------------------------------------------------------------------------
