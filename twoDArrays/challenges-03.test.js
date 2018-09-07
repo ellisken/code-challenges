@@ -169,7 +169,17 @@ const lowestWeeklyAverage = (weather) => {
 // ------------------------------------------------------------------------------------------------
 
 const excel = (str) => {
-  // Solution code here...
+  const rowSums = [];
+  let parsedInput = str.split('\n');
+  for(let i=0; i < parsedInput.length; i++){
+    let sum = 0;
+    let row = parsedInput[i].split(',');
+    for(let j=0; j < row.length; j++) {
+      sum += parseInt(row[j]);
+    }
+    rowSums.push(sum);
+  }
+  return rowSums;
 };
 
 // ------------------------------------------------------------------------------------------------
