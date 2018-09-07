@@ -203,11 +203,10 @@ const excel = (str) => {
 //   ['X', 'O', 'X'],
 // ];
 // ------------------------------------------------------------------------------------------------
-let helpCheck = (board, row1, col1, row2, col2, row3, col3) => {
+const helpCheck = (board, row1, col1, row2, col2, row3, col3) => {
   let square1 = board[row1][col1];
   let square2 = board[row2][col2];
   let square3 = board[row3][col3];
-  console.log(square1+square2+square3);
   if(square1+square2+square3 === 'XXX' || square1+square2+square3 === 'OOO'){
     return true;
   }
@@ -262,9 +261,62 @@ const detectTicTacToeWin = (board) => {
 //   [ null, '*', null, null, null ],
 // ];
 // ------------------------------------------------------------------------------------------------
+const getCellValue = (arr, row, col) => {
+  // Check that row and col are valid
+  if(row < 0 || col < 0){
+    return null;
+  }
+  if(row > arr.length || col > arr[0].length){
+    return null;
+  }
+
+  else{
+    return arr[row][col];
+  }
+}
 
 const minesweeper = (board) => {
-  // Solution code here...
+  // Create new array with same dimensions
+  const bombMap = [board.length][board[0].length];
+  // For each position on the board
+  for(let i=0; i < board.length; i++){
+    for(let j=0; j < board[i].length; j++){
+      let bombCount = 0;
+      //If there's a bomb, put a 9 on the bomb map
+      if(board[i][j] === '*'){
+        bombMap[i][j] = 9;
+      }
+      //Check all surrounding cells (brute force dumb way)
+      else{
+        if(getCellValue(board, i-1, j-1) === '*'){
+          bombCount++;
+        } 
+        if(getCellValue(board, i-1, j) === '*' ){
+          bombCount++;
+        }
+        if(getCellValue(board, i-1, j+1) === '*'){
+          bombCount++;
+        }
+        if(getCellValue(board, i, j-1) === '*'){
+          bombCount++;
+        }
+        if(getCellValue(board, i, j+1) === '*'){
+          bombCount++;
+        }
+        if(getCellValue(board, i+1, j-1) === '*'){
+          bombCount++;
+        }
+        if(getCellValue(board, i+1, j) === '*'){
+          bombCount++;
+        }     
+        if(getCellValue(board, i+1, j+1) === '*'){
+          bombCount++;
+        }
+      }
+    }
+  }
+  console.log(bombMap);
+  return bombMap;
 };
 
 // ------------------------------------------------------------------------------------------------
