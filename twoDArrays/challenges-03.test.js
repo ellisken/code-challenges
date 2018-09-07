@@ -266,7 +266,7 @@ const getCellValue = (arr, row, col) => {
   if(row < 0 || col < 0){
     return null;
   }
-  if(row > arr.length || col > arr[0].length){
+  else if(row >= arr.length || col >= arr[0].length){
     return null;
   }
 
@@ -277,7 +277,11 @@ const getCellValue = (arr, row, col) => {
 
 const minesweeper = (board) => {
   // Create new array with same dimensions
-  const bombMap = [board.length][board[0].length];
+  const bombMap = [];
+  for(let i=0; i < board.length; i++){
+    bombMap.push([]);
+  }
+  console.log(bombMap);
   // For each position on the board
   for(let i=0; i < board.length; i++){
     for(let j=0; j < board[i].length; j++){
@@ -312,10 +316,13 @@ const minesweeper = (board) => {
         if(getCellValue(board, i+1, j+1) === '*'){
           bombCount++;
         }
+        bombMap[i][j] = bombCount;
+        console.log(bombMap);
       }
     }
   }
   console.log(bombMap);
+  console.log(board);
   return bombMap;
 };
 
