@@ -74,7 +74,13 @@ const battleship = (board, row, col) => {
 // ------------------------------------------------------------------------------------------------
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+  numbers.forEach( (numList) => {
+    for(let i = 0; i < numList.length; i++){
+      product *= numList[i];
+    }
+  })
+  return product;
 };
 
 // ------------------------------------------------------------------------------------------------
