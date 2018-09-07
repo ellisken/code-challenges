@@ -281,7 +281,6 @@ const minesweeper = (board) => {
   for(let i=0; i < board.length; i++){
     bombMap.push([]);
   }
-  console.log(bombMap);
   // For each position on the board
   for(let i=0; i < board.length; i++){
     for(let j=0; j < board[i].length; j++){
@@ -317,12 +316,9 @@ const minesweeper = (board) => {
           bombCount++;
         }
         bombMap[i][j] = bombCount;
-        console.log(bombMap);
       }
     }
   }
-  console.log(bombMap);
-  console.log(board);
   return bombMap;
 };
 
