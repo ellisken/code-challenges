@@ -226,7 +226,27 @@ const removeVowels = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractVowels = (input) => {
-  // Solution code here...
+  let result = [];
+  let vowels = [];
+  let words = input.split(' ');
+  words.forEach((word, i) => {
+    let letters = word.split('');
+    letters.forEach((letter) => {
+      if(/[aeiou]/i.test(letter)){
+        vowels.push(letter);
+      }
+    })
+    words[i] = word.replace(/[aeiou]/ig, '');
+  })
+  //add input minus vowels and vowel string to result
+  if(words.length > 1){
+    result.push(words.join(' '));
+  }
+  else{
+    result.push(words.toString());
+  }
+  result.push(vowels.sort().join(''));
+  return result;
 };
 
 // ------------------------------------------------------------------------------------------------
