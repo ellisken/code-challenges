@@ -136,7 +136,12 @@ const stepActions = (recipe) => {
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe['ingredients'].forEach((item) => {
+    item = item.split(' ');
+    // Get rid of item amounts
+    item = item.slice(2, item.length);
+    result.push(item.join(' '));
+  })
   return result;
 }
 
