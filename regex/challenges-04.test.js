@@ -65,7 +65,7 @@ const citiesAtoJ = (cities) => {
 // ------------------------------------------------------------------------------------------------
 
 const matchMonth = (input) => {
-  let regex = /^[oO]ct?(ober)*$/;
+  let regex = /^[oO]ct?(ober){0,1}$/;
   if(regex.test(input)){
     return true;
   }
@@ -86,7 +86,8 @@ const matchMonth = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const noPunctuation = input => {
-  // Solution code here...
+  let regex = /[a-z]+\s/ig;
+  return input.match(regex);
 };
 
 // ------------------------------------------------------------------------------------------------
