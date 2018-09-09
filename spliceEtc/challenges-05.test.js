@@ -159,7 +159,14 @@ const splitFoods = (recipe) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeEvenValues = (input) => {
-  // Solution code here...
+  let size = input.length;
+  for(let i=0; i < size; i++){
+    if(input[i] % 2 === 0){
+      input.splice(i, 1);
+      i--; // decrement i so that no elements are skipped when one is removed
+    }
+  }
+  return input;
 };
 
 // ------------------------------------------------------------------------------------------------
