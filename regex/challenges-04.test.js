@@ -125,9 +125,16 @@ let hangman = (str) => {
 // ------------------------------------------------------------------------------------------------
 
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
-
 const findShells = (phrase) => {
-  // Solution code here...
+  let answer = [];
+  let regex = /^[s][heas]*(ells)\.{0,1}$/i;
+  const words = phrase.split(' ');
+  words.forEach( (word) => {
+    if(regex.test(word)){
+      answer.push(word.replace(/\.$/, ''));
+    }
+  })
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
