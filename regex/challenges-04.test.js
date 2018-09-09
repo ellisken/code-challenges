@@ -104,7 +104,14 @@ const noPunctuation = input => {
 // ------------------------------------------------------------------------------------------------
 
 let hangman = (str) => {
-  // Solution code here...
+  // str.split() to get an array of the words
+  // for each word "str" in the array, for each letter in the string
+  // if the letter matches a, e, i, o, u => replace with _
+  let words = str.split(' ');
+  for(let i=0; i < words.length; i++){
+    words[i] = words[i].replace(/[aeiou]/ig, '_');
+  } 
+  return words.join(' ');
 };
 
 // ------------------------------------------------------------------------------------------------
