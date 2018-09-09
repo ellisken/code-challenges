@@ -99,7 +99,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe['ingredients'].forEach((item) => {
+    // Trim item to everything after the first two spaces
+    let itemOnly = item.slice(item.indexOf(' ')+1, item.length);
+    itemOnly = itemOnly.slice(itemOnly.indexOf(' ')+1, itemOnly.length);
+    result.push(itemOnly);
+  })
   return result;
 }
 
