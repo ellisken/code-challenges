@@ -204,7 +204,14 @@ const removeLastCharacters = (str, numberOfCharacters) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeVowels = (input) => {
-  // Solution code here...
+  let wordArray = input.split('');
+  wordArray.forEach((letter, i) => {
+    if(/[aeiou]/i.test(letter)){
+      wordArray.splice(i, 1);
+      i--;
+    }
+  })
+  return wordArray.join('');
 };
 
 // ------------------------------------------------------------------------------------------------
