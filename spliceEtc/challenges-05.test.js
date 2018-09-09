@@ -184,7 +184,14 @@ const removeEvenValues = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const removeLastCharacters = (str, numberOfCharacters) => {
-  // Solution code here...
+  // Check for invalid input number
+  if(numberOfCharacters > str.length){
+    return '';
+  }
+  if(numberOfCharacters < 0){
+    return str;
+  }
+  return str.slice(0, str.length - numberOfCharacters);
 };
 
 // ------------------------------------------------------------------------------------------------
