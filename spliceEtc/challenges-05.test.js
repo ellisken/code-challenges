@@ -121,7 +121,9 @@ const listFoods = (recipe) => {
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe['steps'].forEach((step) => {
+    result.push(step.split(' ')[0]);
+  })
   return result;
 }
 
