@@ -65,7 +65,7 @@ const citiesAtoJ = (cities) => {
 // ------------------------------------------------------------------------------------------------
 
 const matchMonth = (input) => {
-  let regex = /^[oO]ct?(ober){0,1}$/;
+  let regex = /^[Oo]ct(ober)?$/;
   if(regex.test(input)){
     return true;
   }
@@ -126,15 +126,18 @@ let hangman = (str) => {
 
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 const findShells = (phrase) => {
-  let answer = [];
-  let regex = /^[s][heas]*(ells)\.{0,1}$/i;
-  const words = phrase.split(' ');
-  words.forEach( (word) => {
-    if(regex.test(word)){
-      answer.push(word.replace(/\.$/, ''));
-    }
-  })
-  return answer;
+  // let answer = [];
+  // let regex = /[s][heas]*(ells)\.?/ig;
+  // const words = phrase.split(' ');
+  // words.forEach( (word) => {
+  //   if(regex.test(word)){
+  //     answer.push(word.replace(/\.$/, ''));
+  //   }
+  // })
+  // return answer;
+  let newArr = phrase.match(/[s][heas]*(ells)\.?/ig);
+  return newArr.forEach( (word, i) => newArr[i] = newArr[i].strip('.'));
+  // console.log(phrase.match(regex));
 };
 
 // ------------------------------------------------------------------------------------------------
