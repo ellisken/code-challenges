@@ -166,7 +166,7 @@ const hasChildrenEntries = (arr, character) => {
   getFrom(arr, 'entries').forEach((entry) => {
     if(entry[1]['name'] === character){
       console.log(entry[1]['children'].length);
-      if(Object.entries(entry[1]['children']).length > 0){
+      if(Object.entries((entry[1]['children'])).length > 0){
         answer = true;
       }
       else{
