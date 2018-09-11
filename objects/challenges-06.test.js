@@ -122,7 +122,11 @@ const totalCharacters = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const getHouses = (arr) => {
-  // Solution code here...
+  let answer = [];
+  getFrom(arr, 'entries').forEach((character) => {
+    answer.push(character[1]['house']);
+  })
+  return answer;
 }
 
 // ------------------------------------------------------------------------------------------------
