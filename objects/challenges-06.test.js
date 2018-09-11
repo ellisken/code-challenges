@@ -137,7 +137,19 @@ const getHouses = (arr) => {
 // ------------------------------------------------------------------------------------------------
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
+  let answer;
+  getFrom(arr, 'entries').forEach((entry) => {
+    if(entry[1]['name'] === character){
+      console.log(entry[1]['children'].length);
+      if(entry[1]['children'].length > 0){
+        answer = true;
+      }
+      else{
+        answer = false;
+      }
+    }
+  })
+  return answer;
 }
 
 // ------------------------------------------------------------------------------------------------
