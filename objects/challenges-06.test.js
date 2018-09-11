@@ -136,12 +136,13 @@ const getHouses = (arr) => {
 // based on whether that character has children. Use the getFrom function you wrote in challenge 4.
 // ------------------------------------------------------------------------------------------------
 
+//I already know my solution is not the best. Why does it not work if I return true/false on lines 146 and 149?
 const hasChildrenValues = (arr, character) => {
   let answer;
   getFrom(arr, 'entries').forEach((entry) => {
     if(entry[1]['name'] === character){
       console.log(entry[1]['children'].length);
-      if(entry[1]['children'].length > 0){
+      if(Object.values(entry[1]['children']).length > 0){
         answer = true;
       }
       else{
@@ -161,7 +162,19 @@ const hasChildrenValues = (arr, character) => {
 // ------------------------------------------------------------------------------------------------
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  let answer;
+  getFrom(arr, 'entries').forEach((entry) => {
+    if(entry[1]['name'] === character){
+      console.log(entry[1]['children'].length);
+      if(Object.entries(entry[1]['children']).length > 0){
+        answer = true;
+      }
+      else{
+        answer = false;
+      }
+    }
+  })
+  return answer;
 }
 
 // ------------------------------------------------------------------------------------------------
