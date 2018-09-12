@@ -122,7 +122,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (abilities) => {
-  return Object.values(snorlaxAbilities)[0].map((ability) => {
+  return Object.values(abilities).map((ability) => {
     return ability.ability.name;
   })
 };
@@ -171,7 +171,12 @@ const snorlaxStats = {
 };
 
 const extractStats = (stats) => {
-  // Solution code here...
+  return Object.values(stats).map((item) => {
+    return {
+      name: item.stat.name,
+      total: item.effort + item.baseStat
+    }
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
