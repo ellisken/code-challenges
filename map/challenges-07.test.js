@@ -122,7 +122,9 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (abilities) => {
-  // Solution code here...
+  return Object.values(snorlaxAbilities)[0].map((ability) => {
+    return ability.ability.name;
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
