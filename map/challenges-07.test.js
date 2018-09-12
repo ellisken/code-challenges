@@ -14,9 +14,9 @@
 
 const forLoopTwoToThe = (input) => {
   let answer = [];
-  input.forEach((num) => {
-    answer.push(2 ** num);
-  })
+  for(let i=0; i < input.length; i++){
+    answer.push(2 ** input[i]);
+  }
   return answer;
 };
 
@@ -28,7 +28,11 @@ const forLoopTwoToThe = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const forEachTwoToThe = (input) => {
-  // Solution code here...
+  let answer = [];
+  input.forEach((num) => {
+    answer.push(2 ** num);
+  })
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
