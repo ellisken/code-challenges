@@ -26,7 +26,7 @@ const oddValues = (input) => {
 
 
 const filterStringsWithVowels = (input) => {
-  // Solution code here...
+  return input.filter(word => /[aeiou]/i.test(word));
 };
 
 
