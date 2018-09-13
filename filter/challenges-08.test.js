@@ -40,7 +40,9 @@ const filterStringsWithVowels = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const notInFirstArray = (forbiddenValues, input) => {
-  // Solution code here...
+  return input.filter((element) => {
+    if(!forbiddenValues.includes(element)) return element;
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
