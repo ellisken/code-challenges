@@ -41,7 +41,7 @@ const filterStringsWithVowels = (input) => {
 
 const notInFirstArray = (forbiddenValues, input) => {
   return input.filter((element) => {
-    if(!forbiddenValues.includes(element)) return element;
+    return !forbiddenValues.includes(element);
   })
 };
 
@@ -89,7 +89,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (input, minBaseStat) => {
   return input.filter( (entry) => {
-    if(entry['baseStat'] > minBaseStat) return entry;
+    return entry['baseStat'] > minBaseStat;
   })
 };
 
@@ -104,7 +104,7 @@ const getBaseStatGreaterThan = (input, minBaseStat) => {
 // ------------------------------------------------------------------------------------------------
 
 const getStatName = (input, minBaseStat) => {
-  // Solution code here...
+  return input.filter( entry => entry['baseStat'] > minBaseStat).map(entry => entry.stat.name);
 };
 
 // ------------------------------------------------------------------------------------------------
