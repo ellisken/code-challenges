@@ -88,7 +88,9 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (input, minBaseStat) => {
-  // Solution code here...
+  return input.filter( (entry) => {
+    if(entry['baseStat'] > minBaseStat) return entry;
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
