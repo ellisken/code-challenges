@@ -128,10 +128,9 @@ const extractStat = (statName, input) => {
 // ------------------------------------------------------------------------------------------------
 
 const calculateAverage = (input) => {
-  let sum = input.reduce((ans, x) => {
+  return input.reduce((ans, x) => {
     return ans + x;
-  });
-  return sum / input.length;
+  })/ input.length;
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -145,8 +144,7 @@ const calculateAverage = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractChildren = input => {
-  let charactersWithA = input.filter((person) => /a/i.test(person.name));
-  return charactersWithA.reduce((ans, x) => {
+  return input.filter((person) => /a/i.test(person.name)).reduce((ans, x) => {
     if('children' in x) return ans.concat(x.children);
     else return ans;
   }, []);
@@ -162,7 +160,9 @@ const extractChildren = input => {
 // ------------------------------------------------------------------------------------------------
 
 const reversedString = (input) => {
-  // Solution code here...
+  return input.split('').reduce((ans, x) => {
+    return x + ans;
+  }, '');
 };
 
 // ------------------------------------------------------------------------------------------------
