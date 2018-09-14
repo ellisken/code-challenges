@@ -128,7 +128,10 @@ const extractStat = (statName, input) => {
 // ------------------------------------------------------------------------------------------------
 
 const calculateAverage = (input) => {
-  // Solution code here...
+  let sum = input.reduce((ans, x) => {
+    return ans + x;
+  });
+  return sum / input.length;
 };
 
 // ------------------------------------------------------------------------------------------------
