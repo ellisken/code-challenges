@@ -145,7 +145,11 @@ const calculateAverage = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const extractChildren = input => {
-  // Solution code here...
+  let charactersWithA = input.filter((person) => /a/i.test(person.name));
+  return charactersWithA.reduce((ans, x) => {
+    if('children' in x) return ans.concat(x.children);
+    else return ans;
+  }, []);
 };
 
 // ------------------------------------------------------------------------------------------------
