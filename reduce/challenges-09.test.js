@@ -175,7 +175,7 @@ const reversedString = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const isPrime = (value) => {
-  for (let i = 2; i < value; i++) {
+  for (let i = 2; i < value / 2; i++) {
     if (value % i === 0) {
       return false;
     }
@@ -184,7 +184,10 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (input) => {
-  // Solution code here...
+  return input.reduce((ans, x) => {
+    if(isPrime(x)) return ans + 1;
+    else return ans;
+  }, 0);
 }
 
 // ------------------------------------------------------------------------------------------------
