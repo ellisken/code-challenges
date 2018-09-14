@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------------------------
 
 const countNumberOfElements = (input) => {
-  return input.reduce((ans, x) => ans+=1, 0);
+  return input.reduce((ans, x) => ans+=1);
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -65,7 +65,12 @@ const characters = [
 ];
 
 const countNumberOfChildren = (input) => {
-  // Solution code here...
+  return input.reduce((ans, x) => {
+    if('children' in x){
+      return ans + x.children.length;
+    }
+    else return ans;
+  }, 0);
 };
 
 // ------------------------------------------------------------------------------------------------
