@@ -162,7 +162,7 @@ const extractChildren = input => {
 const reversedString = (input) => {
   return input.split('').reduce((ans, x) => {
     return x + ans;
-  }, '');
+  });
 };
 
 // ------------------------------------------------------------------------------------------------
