@@ -124,8 +124,6 @@ let starWarsData = [{
 }]
 
 let findMaleAndFemale = (data) => {
-  //Get array of names of each character whose gender is male || female
-  //Reduce that array into a string joined with 'and's
   return data.filter(character => character.gender === 'female' || character.gender === 'male').map((character) => {
     return character.name;
   }).reduce((ans, x) => {
@@ -136,13 +134,16 @@ let findMaleAndFemale = (data) => {
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 5
 
-// Write a function named findShortest that, given the Star Wars data from challenge 6,
+// Write a function named findShortest that, given the Star Wars data from challenge 4,
 // uses any combination of filter, map and reduce to return the name of the shortest character.
 //
 // ------------------------------------------------------------------------------------------------
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((ans, x) => {
+    // return (parseInt(x.height) < parseInt(ans.height) ? x : ans);
+    return (x.height < ans.height ? x : ans);
+  }, data[0]).name;
 }
 
 // ------------------------------------------------------------------------------------------------
