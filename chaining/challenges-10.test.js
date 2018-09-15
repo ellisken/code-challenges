@@ -55,7 +55,11 @@ const totalSum = (input) => {
 // ------------------------------------------------------------------------------------------------
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map((array) => { 
+    return array.filter(x => x % 5 === 0 && typeof x === 'number')
+  }).map((array) => {
+    return array.map(x => 2 ** x);
+  });
 };
 
 // ------------------------------------------------------------------------------------------------
