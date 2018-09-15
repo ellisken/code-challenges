@@ -124,7 +124,13 @@ let starWarsData = [{
 }]
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  //Get array of names of each character whose gender is male || female
+  //Reduce that array into a string joined with 'and's
+  return data.filter(character => character.gender === 'female' || character.gender === 'male').map((character) => {
+    return character.name;
+  }).reduce((ans, x) => {
+    return ans + ' and ' + x;
+  });
 }
 
 // ------------------------------------------------------------------------------------------------
