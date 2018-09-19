@@ -177,10 +177,14 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
-const sortMeetingsByDay = (meetings) => {
-  return meetings.sort((a, b) => {
 
-  })
+const sortMeetingsByDay = (meetings) => {
+  const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+  return meetings.sort((a, b) => {
+    if(days.indexOf(a.dayOfWeek) < days.indexOf(b.dayOfWeek)) return -1;
+    if(days.indexOf(a.dayOfWeek) > days.indexOf(b.dayOfWeek)) return 1;
+    return 0;
+  });
 };
 
 // ------------------------------------------------------------------------------------------------
