@@ -41,11 +41,7 @@ const alphabetize = (strings) => {
 // ------------------------------------------------------------------------------------------------
 
 const sortByLength = (strings) => {
-  return strings.sort((a, b) => {
-    if(a.length < b.length) return -1;
-    if(a.length > b.length) return 1;
-    return 0;
-  })
+  return strings.sort((a, b) => a.length - b.length)
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -58,7 +54,11 @@ const sortByLength = (strings) => {
 // ------------------------------------------------------------------------------------------------
 
 const alphabetizeBetter = (strs) => {
-  // Solution code here...
+  return strs.sort((a, b) => {
+    if(a.toLowerCase() > b.toLowerCase()) return 1;
+    else if(a.toLowerCase() < b.toLowerCase()) return -1;
+    return 0;
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
