@@ -135,6 +135,7 @@ const sortPeople = (people) => {
 // (Do not worry about capitalization.)
 // ------------------------------------------------------------------------------------------------
 
+// Sorry, this is terrible
 const sortPeopleBetter = (people) => {
   return people.sort((a, b) => {
     if(a.lastName < b.lastName) return -1;
@@ -177,7 +178,9 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (meetings) => {
-  // Solution code here...
+  return meetings.sort((a, b) => {
+
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -190,7 +193,7 @@ const sortMeetingsByDay = (meetings) => {
 // ------------------------------------------------------------------------------------------------
 
 const sortSchedule = (meetings) => {
-  // Solution code here...
+  
 };
 
 // ------------------------------------------------------------------------------------------------
