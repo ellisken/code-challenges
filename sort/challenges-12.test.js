@@ -76,7 +76,11 @@ const alphabetizeBetter = (strs) => {
 // ------------------------------------------------------------------------------------------------
 
 const sortByPrice = (objs) => {
-  // Solution code here...
+  return objs.sort((a, b) => {
+    if(a.price == b.price) return 0;
+    if(a.price < b.price) return -1;
+    return 1;
+  })
 };
 
 // ------------------------------------------------------------------------------------------------
