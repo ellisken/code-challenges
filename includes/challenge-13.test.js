@@ -117,7 +117,7 @@ const unenrollBrook = (roster) => {
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (eventStrings) => {
-  // Solution code here...
+
 };
 
 // ------------------------------------------------------------------------------------------------
@@ -128,7 +128,11 @@ const sortByDay = (eventStrings) => {
 // ------------------------------------------------------------------------------------------------
 
 const characterByIndex = (strs) => {
-  // Solution code here...
+  let answer = [];
+  strs.forEach((word, i) => {
+    answer.push(word[i]);
+  });
+  return answer;
 };
 
 // ------------------------------------------------------------------------------------------------
