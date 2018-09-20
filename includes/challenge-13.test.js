@@ -117,7 +117,14 @@ const unenrollBrook = (roster) => {
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (eventStrings) => {
-
+  return daysOfWeek.reduce((ans, day) => {
+    let events = [];
+    eventStrings.forEach((event) => {
+      if(event.includes(day)) events.push(event);
+    });
+    ans.push(events);
+    return ans;
+  }, []);
 };
 
 // ------------------------------------------------------------------------------------------------
